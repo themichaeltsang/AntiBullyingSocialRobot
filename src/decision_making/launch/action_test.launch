@@ -1,0 +1,8 @@
+<launch>
+    <!-- <include file="$(find bandit_driver)/launch/bandit.launch"/> -->
+
+    <include file="$(find bandit_driver)/launch/actionserver_test.launch"/>
+
+    <!-- <node name="BanditActionControlServer" pkg="decision_making" type="action_server" output="screen"/> -->
+    <node name="BanditActionControlClient" pkg="decision_making" type="action_client" output="screen"/>
+</launch>

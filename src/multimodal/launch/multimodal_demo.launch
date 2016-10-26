@@ -1,0 +1,10 @@
+
+<launch>
+  <node pkg="clm_bridge" type="clm_bridge" name="clm_bridge" output="screen"></node>
+
+  <node pkg="multimodal" type="multimodal" name="multimodal" output="screen"></node>
+
+
+
+  <!--For launching GUI tools <include file="$(find node_example)/launch/tools.launch"/>-->
+</launch>

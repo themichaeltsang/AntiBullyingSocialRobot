@@ -1,0 +1,7 @@
+<launch>
+    <node name="sequence_read_node" pkg="data_interface" type="sequence_read_node" output="screen"/>
+
+  <node pkg="perceptual_filter" type="perceptual_filter_node" name="perceptual_filter_node" output="screen"></node>
+
+   <node name="grt_load_node" pkg="cpp_classifiers" type="grt_load_node" output="screen"/>
+</launch>

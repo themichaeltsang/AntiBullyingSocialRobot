@@ -1,0 +1,4 @@
+<launch>
+
+    <node name="sequence_read_node" pkg="data_interface" type="sequence_read_node" output="screen"/>
+</launch>

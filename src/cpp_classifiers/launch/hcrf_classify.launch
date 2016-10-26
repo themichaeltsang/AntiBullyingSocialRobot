@@ -1,0 +1,5 @@
+<launch>
+
+    <node name="hcrf_classifiers_node" pkg="cpp_classifiers" type="hcrf_classifiers_node" output="screen"/>
+
+</launch>

@@ -1,0 +1,24 @@
+<launch>
+	
+	<!--NOTE: FIRST RUN: roscore, rosrun bandit_driver bandit_driver_node, then this (old param) cwd="node"  -->
+  <!--<node name="bandit_driver_node" pkg="bandit_driver" type="bandit_driver_node" output="screen" required="true"/>-->
+
+	
+	<!--ACTION SERVER LAUNCH-->
+    <include file="$(find bandit_driver)/launch/actionserver_test.launch"/>
+
+    <!--ACTION CLIENT LAUNCH-->
+    <node name="decision_making_node" pkg="decision_making" type="decision_making_node" output="screen"/>
+    
+	<!--PERCEPTUAL FILTER LAUNCH-->
+	<node pkg="perceptual_filter" type="perceptual_filter_node" name="perceptual_filter_node" output="screen"></node>
+
+  	<!--MULTIMODAL LAUNCH-->
+  	<node pkg="multimodal" type="multimodal" name="multimodal" output="screen"></node>
+
+    <!--KINECT BRIDGE LAUNCH-->
+  	<arg name="server_ip"/>
+  	<node pkg="kinect_bridge2" type="kinect_client" name="kinect_client" output="screen" args="_server_ip:=$(arg server_ip)"/>
+  	<include file="$(find kinect_bridge2)/launch/kinect_transforms.launch" />
+
+</launch>

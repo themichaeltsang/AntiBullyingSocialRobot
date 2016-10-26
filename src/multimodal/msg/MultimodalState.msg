@@ -1,0 +1,23 @@
+clm_bridge/ClmHeads clm_heads_msg
+kinect_bridge2/KinectBodies kinect_bodies_msg
+kinect_bridge2/KinectFaces kinect_faces_msg
+kinect_bridge2/KinectHDFaces kinect_hdfaces_msg
+kinect_bridge2/KinectRawAudio kinect_rawaudio_msg
+kinect_bridge2/CLMHeads kinect_clmheads_msg
+
+bool clm_heads_msg_isvalid
+bool kinect_bodies_msg_isvalid
+bool kinect_faces_msg_isvalid
+bool kinect_hdfaces_msg_isvalid
+bool kinect_rawaudio_msg_isvalid
+bool kinect_clmheads_msg_isvalid
+
+
+uint64 timeID
+
+multimodal/MultimodalLabel[] labels_msg
+bool labels_arevalid
+
+bool new_sequence
+uint64 sequence_number
+string sequence_boundary

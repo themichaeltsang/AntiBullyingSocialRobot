@@ -1,0 +1,6 @@
+<launch>
+  
+   <node name="bandit_driver_node" pkg="bandit_driver" type="bandit_driver_node"/>
+    <!--<node name="bandit_demo_gestures" pkg="bandit_driver" type="bandit_demo_gestures"/> -->
+</launch>
+

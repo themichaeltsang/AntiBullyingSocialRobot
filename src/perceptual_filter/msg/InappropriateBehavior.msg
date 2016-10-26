@@ -1,0 +1,14 @@
+uint8 pointing_taunt
+uint8 pointing
+uint8 fist_threat
+uint8 hitting_prep
+uint8 punching_prep
+uint8 kicking_prep
+uint8 shoving_prep
+uint8 making_faces_tongue_sticking_out_hands_at_ears
+uint8 making_faces_tongue_sticking_out
+
+uint8 punching
+uint8 shoving
+uint8 kicking
+uint8 hitting

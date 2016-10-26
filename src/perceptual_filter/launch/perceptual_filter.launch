@@ -1,0 +1,23 @@
+<launch>
+
+  <!--KINECT BRIDGE LAUNCH-->
+  <arg name="server_ip"/>
+  <node pkg="kinect_bridge2" type="kinect_client" name="kinect_client" output="screen" args="_server_ip:=$(arg server_ip)"/>
+  <include file="$(find kinect_bridge2)/launch/kinect_transforms.launch" />
+
+
+  <!--CLM BRIDGE LAUNCH-->
+  <node pkg="clm_bridge" type="clm_bridge" name="clm_bridge" output="screen"></node>
+
+
+  <!--MULTIMODAL LAUNCH-->
+  <node pkg="multimodal" type="multimodal" name="multimodal" output="screen"></node>
+
+  
+  <!--PERCEPTUAL FILTER LAUNCH-->
+  <node pkg="perceptual_filter" type="perceptual_filter_node" name="perceptual_filter_node" output="screen"></node>
+
+  <!--WEKA CLASSIFIERS LAUNCH-->
+  <node pkg="java_classifiers" type="execute" name="weka_classify" args="rosjava.java_classifiers.weka_classify.WekaClassify" output="screen"/>
+
+</launch>

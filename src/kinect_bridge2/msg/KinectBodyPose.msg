@@ -1,0 +1,40 @@
+float32 crossed_arms
+
+float32 shoulders_up_closed_stance
+float32 left_arm_pointing
+float32 right_arm_pointing
+float32 left_hand_covering_mouth
+float32 right_hand_covering_mouth
+float32 hands_at_ears
+
+float32 showing_right_fist
+float32 showing_left_fist
+
+float32 shove_preparation
+float32 right_hit_preparation
+float32 left_hit_preparation
+float32 right_kick_preparation
+float32 left_kick_preparation
+float32 right_swing_preparation
+float32 left_swing_preparation
+
+
+float32 right_arm_vertical_swing_preparation
+float32 left_arm_vertical_swing_preparation
+float32 right_arm_horizontal_swing_preparation
+float32 left_arm_horizontal_swing_preparation
+float32 right_arm_diagonal_swing_preparation
+float32 left_arm_diagonal_swing_preparation
+float32 showing_right_fist_elbow_up
+float32 showing_left_fist_elbow_up
+float32 showing_right_fist_elbow_down
+float32 showing_left_fist_elbow_down
+float32 shove
+float32 right_hit
+float32 left_hit
+float32 right_kick
+float32 left_kick
+float32 right_arm_vertical_swing
+float32 left_arm_vertical_swing
+float32 right_arm_horizontal_swing
+float32 left_arm_horizontal_swing

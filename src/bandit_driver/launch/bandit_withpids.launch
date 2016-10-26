@@ -1,0 +1,88 @@
+<launch>
+
+
+    <arg name="bandit_id" default="6"/>
+    <arg name="name" default="bandit_driver" />
+
+    <rosparam param="/$(arg name)/pids" command="load" file="$(find bandit_driver)/params/bandit_$(arg bandit_id)/pids.yaml" />
+
+    <rosparam param="/$(arg name)/joints" command="load" file="$(find bandit_driver)/params/bandit_$(arg bandit_id)/joints.yaml" />
+
+    <node name="bandit_driver_node" pkg="bandit_driver" type="bandit_driver_node"/>
+    <!-- <node name="bandit_demo_gestures" pkg="bandit_driver" type="bandit_demo_gestures"/> -->
+
+    <!-- Diagnostics -->
+    <include file="$(find bandit_driver)/launch/diagnostics.xml"/>
+    <!-- <node name="robot_monitor" type="robot_monitor" pkg="robot_monitor"/> -->
+
+
+</launch>
+
+    
+<!--
+    <arg name="urdf_filename" default="$(find bandit_urdf)/urdf/bandit_defs.urdf"/>
+    <arg name="use_joint_limits" default="false" />
+
+    <arg name="pkg" value="bandit_driver_prototype" />
+
+    <arg name="type" default="$(arg name)_node" />
+    <arg name="rate" default="30" />
+
+    <arg name="args" value="_port:=/dev/bandit/usb-serial _loop_rate:=$(arg rate) _urdf_filename:=$(arg urdf_filename) _use_joint_limits:=$(arg use_joint_limits) _tf_prefix:=bandit" />
+    <arg name="manager" default="manager" />
+    <arg name="nodelet" default="false" />
+-->
+
+
+
+
+<!--
+    <node
+        if="$(arg nodelet)"
+        pkg="nodelet"
+        type="nodelet"
+        name="$(arg name)"
+        args="load $(arg pkg)/$(arg name) $(arg manager) $(arg args)"
+        output="screen" />
+
+    <node
+        unless="$(arg nodelet)"
+        pkg="$(arg pkg)"
+        type="$(arg type)"
+        name="$(arg name)"
+        args="$(arg args)"
+        output="screen" />
+-->
+
+
+
+
+
+
+
+
+  <!--<node name="console" type="rxconsole" pkg="rxtools"/>-->
+
+	<!-- send bandit urdf to param server -->
+	<!--<include file="$(find bandit_urdf)/launch/upload_bandit.launch"/>-->
+
+  <!-- push table_description to factory and spawn robot in gazebo -->
+  <!--<node name="spawn_bandit" pkg="gazebo_tools" type="gazebo_model" args="-z 0.01 -p robot_description spawn" respawn="false" output="screen" />-->
+
+	<!--<include file="$(find bandit_urdf)/controller.launch"/>-->
+
+	<!--<node name="bandit_driver" pkg="bandit_driver" type="bandit_node">-->
+    <!-- <param name="calibration_file" type="str" value="$(find bandit_driver)/config/<robot_name>/<config_file>.yaml"/> </node>-->
+  
+	<!--<node name="mover" pkg="bandit_mover" type="bandit_mover"/>-->
+	<!--<node name="rviz" type="rviz" pkg="rviz"/>-->
+
+	<!-- Diagnostics -->
+  <!--<include file="$(find bandit_driver)/launch/diagnostics.xml"/>-->
+  <!--<node name="robot_monitor" type="robot_monitor" pkg="robot_monitor"/>-->
+
+
+
+
+
+

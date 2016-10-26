@@ -1,0 +1,19 @@
+#goal
+uint8 SET_RESTING_POSITION = 0
+uint8 LOOK_UP = 1
+uint8 LOOK_DOWN = 2
+uint8 SHAKE_HEAD = 3
+uint8 FOLLOW_YOU = 4
+
+uint8 headMovementType
+duration gesture_duration
+geometry_msgs/Point your_head_position
+
+---
+#feedback
+
+uint8 MOVING_TO_TARGET = 0
+uint8 AT_TARGET = 1
+uint8 feedbackState
+---
+#state

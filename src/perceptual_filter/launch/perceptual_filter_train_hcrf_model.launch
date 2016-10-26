@@ -1,0 +1,7 @@
+<launch>
+    <node name="data_read_node" pkg="data_interface" type="data_read_node" output="screen"/>
+
+  <node pkg="perceptual_filter" type="perceptual_filter_node" name="perceptual_filter_node" output="screen"></node>
+
+   <node name="hcrf_classifiers_node" pkg="cpp_classifiers" type="hcrf_classifiers_node" output="screen"/>
+</launch>

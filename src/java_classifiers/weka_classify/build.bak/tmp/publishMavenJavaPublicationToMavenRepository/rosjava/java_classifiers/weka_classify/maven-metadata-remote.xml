@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>rosjava.java_classifiers</groupId>
+  <artifactId>weka_classify</artifactId>
+  <version>0.1.0</version>
+  <versioning>
+    <versions>
+      <version>0.1.0</version>
+    </versions>
+    <lastUpdated>20160419224439</lastUpdated>
+  </versioning>
+</metadata>

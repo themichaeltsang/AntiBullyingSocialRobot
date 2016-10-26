@@ -1,0 +1,5 @@
+<launch>
+
+	<node name="BanditActionControlServer" pkg="bandit_driver" type="action_servers" output="screen"/>
+
+</launch>

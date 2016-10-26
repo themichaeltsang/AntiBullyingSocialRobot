@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="perceptual_filter" type="perceptual_filter_node" name="perceptual_filter_node" output="screen"></node>
+
+   <node pkg="java_classifiers" type="execute" name="weka_classify" args="rosjava.java_classifiers.weka_classify.WekaClassify" output="screen"/>
+
+</launch>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="dist/assets/img/grt.ico">
+
+    <title>Gesture Recogniton Toolkit</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css" media="screen" />
+    <link rel="stylesheet" href="dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="dist/navbar-static-top.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Gesture Recognition Toolkit</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="http://nickgillian.com/grt/api/0.1.0/">Documentation</a></li>
+            <li><a href="http://nickgillian.com/wiki">Wiki</a></li>
+            <li><a href="http://nickgillian.com/forum">Forum</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/nickgillian/grt">GRT on GitHub<span class="sr-only">(current)</span></a></li>
+          </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav> <!-- Static navbar -->
+
+    <div class="container">
+      <h2>Gesture Recognition Toolkit</h2>
+      <p>The Gesture Recognition Toolkit (GRT) is a cross-platform, open-source, C++ machine learning library designed for real-time gesture recognition.</p>
+
+
+      <div style="background: white; font-family: Helvetica">
+        <pre><code>
+//Setup a custom recognition pipeline
+GestureRecognitionPipeline pipeline;
+
+//Add a moving average filter pre-processing module
+pipeline << MovingAverageFilter( 5 );
+
+//Add some feature extraction
+pipeline << FFT( 512 );
+pipeline << MyCustomFeatureAlgorithm();
+
+//Add an AdaBoost classifier
+pipeline << Adaboost( DecisionStump() );
+
+//Add a class label filter
+pipeline << ClassLabelTimeoutFilter( 1000 );
+
+//Load a labeled data set from a CSV file and train a classification model
+ClassificationData trainingData;
+
+trainingData.load( "TrainingData.csv" );
+
+//Train a model using the custom pipeline
+bool success = pipeline.train( trainingData );
+
+//The following lines would be called each time the user gets a new sample
+VectorFloat sample = getDataFromSenor(); //Custom user function
+
+if( pipeline.predict( sample ) ){
+  //Get the results
+  unsigned int predictedClassLabel = pipeline.getPredictedClassLabel();
+  Float maxLikelihood = pipeline.getMaximumLikelihood(); 
+}
+        </code></pre>
+
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="dist/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="dist/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

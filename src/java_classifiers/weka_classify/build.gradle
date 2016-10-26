@@ -1,0 +1,65 @@
+/*
+ * Copyright (C) 2014 michael.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+/* This plugin is necessary for creating installApp tasks (i.e. executables) */
+apply plugin: 'application'
+mainClassName = 'org.ros.RosRun'
+
+/* 
+ Dependencies can be on external maven artifacts (such as rosjava_core
+ here) or on sibling subprojects. Fpr external maven artifact dependencies
+ it's convenient to use an open ranged dependency, but restrict it to
+ cover the patch version only to avoid breakages due to api changes
+ which usually occur on minor and major version numbers.
+*/
+
+/*
+  In parent directory, use: gradlew deployApp
+*/
+
+task deployApp(dependsOn: 'installApp') << {
+  File binDir = new File(project.projectDir, '/bin')
+  if (! binDir.isDirectory()) {
+    println "Creating $binDir directory"
+    binDir.mkdirs()
+  }
+  File link = new File(binDir,"execute")
+  File target = new File(project.projectDir, "build/install/$project.name/bin/$project.name")
+  println "Creating symlink from $link.absolutePath to $target.absolutePath"
+  ant.symlink(link: link.absolutePath, resource: target.absolutePath, overwrite: true)
+}
+
+task setupMsg {
+  doFirst {
+    File link2 = new File(project.projectDir, "/lib/perceptual_filter.jar")
+    File target2 = new File(project.projectDir, "/../../../devel/share/maven/org/ros/rosjava_messages/perceptual_filter/0.0.0/perceptual_filter-0.0.0.jar")
+    println "Creating symlink from $link2.absolutePath to $target2.absolutePath"
+    ant.symlink(link: link2, resource: target2, overwrite: true)
+  }
+}
+
+compileJava.dependsOn(setupMsg)
+
+dependencies {
+  compile files("lib/HMM.jar")
+  compile files("lib/weka.jar")
+  compile files("lib/perceptual_filter.jar")
+  /* An external maven artifact dependency */
+  compile 'org.ros.rosjava_core:rosjava:[0.2,0.3)'
+  /* Example of a local subproject dependency */ 
+  /* compile project(':sibling_gradle_project') */
+}
+

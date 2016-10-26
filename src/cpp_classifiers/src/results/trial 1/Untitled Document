@@ -1,0 +1,71 @@
+michael@mac-ubuntu:~/catkin_indigo_ws$ rosrun cpp_classifiers hcrf_classifiers_node -T -P 4 -p 3 -i 1 -h 3 -a hcrf
+
+Reading training set...
+Starting training ...
+Compute error...
+  Iteration # = 0   Nb error eval = 0   Nb gradient eval =  0
+
+F = 86619.5
+Compute gradient...
+Compute error...
+  Iteration # = 0   Nb error eval = 1   Nb gradient eval =  1
+
+F = 1.73407e+09
+Compute error...
+  Iteration # = 0   Nb error eval = 2   Nb gradient eval =  1
+
+F = 5.68416e+08
+Compute error...
+  Iteration # = 0   Nb error eval = 3   Nb gradient eval =  1
+
+F = 1.86339e+08
+Compute error...
+  Iteration # = 0   Nb error eval = 4   Nb gradient eval =  1
+
+F = 6.11022e+07
+Compute error...
+  Iteration # = 0   Nb error eval = 5   Nb gradient eval =  1
+
+F = 2.00522e+07
+Compute error...
+  Iteration # = 0   Nb error eval = 6   Nb gradient eval =  1
+
+F = 6.59688e+06
+Compute error...
+  Iteration # = 0   Nb error eval = 7   Nb gradient eval =  1
+
+F = 2.18653e+06
+Compute error...
+  Iteration # = 0   Nb error eval = 8   Nb gradient eval =  1
+
+F = 740948
+Compute error...
+  Iteration # = 0   Nb error eval = 9   Nb gradient eval =  1
+
+F = 228946
+Compute error...
+  Iteration # = 0   Nb error eval = 10   Nb gradient eval =  1
+
+F = 85738.2
+Compute error...
+  Iteration # = 0   Nb error eval = 11   Nb gradient eval =  1
+
+F = 49200.4
+Compute error...
+  Iteration # = 0   Nb error eval = 12   Nb gradient eval =  1
+
+F = 59132.9
+Compute gradient...
+Compute error...
+  Iteration # = 1   Nb error eval = 13   Nb gradient eval =  2
+
+F = 37896.2
+Compute gradient...
+F = 37896.2  |w| = 127.44
+  Iteration # = 2   Nb error eval = 14   Nb gradient eval =  3
+
+Reading testing set...
+Starting testing ...
+*** Error in `/home/michael/catkin_indigo_ws/devel/lib/cpp_classifiers/hcrf_classifiers_node': double free or corruption (out): 0x00000000031e2ff0 ***
+Aborted (core dumped)
+

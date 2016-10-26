@@ -1,0 +1,13 @@
+build/
+devel/
+archive/
+install/
+*.swp
+.gradle/
+*.bin
+*.lock
+*.*~
+*~
+*.csv
+src/clm_bridge/bin/clm_bridge
+src/kinect_bridge2/bin

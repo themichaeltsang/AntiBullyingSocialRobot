@@ -1,0 +1,14 @@
+kinect_bridge2/KinectHDFaceAnimationUnit[] animation_units
+kinect_bridge2/KinectHDFacePose pose
+
+uint8 is_tracked
+uint32 frame
+float32 time_stamp
+uint32 std_body_idx
+uint8 tongue_sticking_out
+uint32 tongue_depth
+uint32 upper_lip_depth
+uint8 face_quality
+
+geometry_msgs/Vector3 head_pivot
+geometry_msgs/Quaternion bounding_box
