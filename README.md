@@ -1,3 +1,5 @@
+ROS workspace for autonomous operation of an antibullying robot
+
 #requirements:
 * a ubuntu 14.04 machine with ROS Indigo installed
 * a windows 8 or 10 machine. cannot be windows in a virtual machine, must be dual boot - preferably not on bootcamp
@@ -7,20 +9,12 @@
 * bandit robot - only available at the Interaction Lab at USC - connected to the ubuntu computer
 * a webcam attached to the ubuntu machine
 
-#preparation steps:
+#dependencies:
 * install ROS-indigo, rosjava indigo, and OpenCV >=3.0 (https://github.com/TadasBaltrusaitis/CLM-framework/blob/master/readme-ubuntu.txt)
 * sudo apt-get install libsndfile1-dev
 * sudo apt-get install libsfml-dev
 
-
-#special thanks:
-* Vadim Korolik
-
-
-instructions for installing kinect_bridge2 on windows/ubuntu, clm_bridge on ubuntu, and for setting up bandit's serial usb connection to be added later
-
-
-#compilation steps:
+#compilation:
 * in .bashrc, add: export ROS_MAVEN_DEPLOYMENT_REPOSITORY=~/catkin_indigo_ws/devel/share/maven
 * in .bashrc, add: export ROS_MAVEN_PATH=~/catkin_indigo_ws/devel/share/maven
 * in catkin_workspace folder, delete build and devel folders
@@ -30,3 +24,11 @@ instructions for installing kinect_bridge2 on windows/ubuntu, clm_bridge on ubun
 * copy dependencies of clm to devel/lib/clm_bridge
 * "roslaunch perceptual_filter perceptual_filter.launch server_ip:=10.0.1.2"
 * "source devel/setup.sh"
+
+#special thanks:
+* Vadim Korolik
+
+
+instructions for installing kinect_bridge2 on windows/ubuntu, clm_bridge on ubuntu, and for setting up bandit's serial usb connection to be added later
+
+
