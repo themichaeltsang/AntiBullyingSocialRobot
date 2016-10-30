@@ -1,4 +1,4 @@
-ROS workspace for autonomous operation of an antibullying robot, which detects physical bullying behaviors and explains why they are wrong.
+ROS workspace for autonomous operation of an antibullying robot. The antibullying robot detects physical bullying behaviors by humans and explains why they are wrong.
 
 #requirements:
 * a ubuntu 14.04 machine with ROS Indigo installed
